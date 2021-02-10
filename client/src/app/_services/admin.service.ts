@@ -11,7 +11,7 @@ export class AdminService {
 
   constructor(private http: HttpClient) {}
 
-  getUserWithRoles() {
+  getUsersWithRoles() {
     return this.http.get<Partial<User[]>>(
       this.baseUrl + 'admin/users-with-roles'
     );

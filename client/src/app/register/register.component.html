@@ -3,22 +3,23 @@
   (ngSubmit)="registerForm.valid && register()"
   autocomplete="off"
 >
-  <h2 class="text-center text-primary">Sign Up</h2>
+  <h2 class="text-center text-primary">Sign up</h2>
   <hr />
 
   <div class="form-group">
-    <label style="margin-right: 10px" class="control-label">I am a: </label>
+    <label class="control-label" style="margin-right: 10px">I am a: </label>
     <label class="radio-inline">
-      <input type="radio" value="male" formControlName="gender" />Male</label
-    >
+      <input type="radio" value="male" formControlName="gender" /> Male
+    </label>
     <label class="radio-inline">
       <input
-        class="ml-3"
         type="radio"
         value="female"
         formControlName="gender"
-      />Female</label
-    >
+        class="ml-3"
+      />
+      Female
+    </label>
   </div>
 
   <app-text-input
@@ -46,7 +47,8 @@
     [formControl]="registerForm.controls['password']"
     [label]="'Password'"
     [type]="'password'"
-  ></app-text-input>
+  >
+  </app-text-input>
   <app-text-input
     [formControl]="registerForm.controls['confirmPassword']"
     [label]="'Confirm Password'"

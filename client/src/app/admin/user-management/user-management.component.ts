@@ -23,7 +23,7 @@ export class UserManagementComponent implements OnInit {
   }
 
   getUsersWithRoles() {
-    this.adminService.getUserWithRoles().subscribe((users) => {
+    this.adminService.getUsersWithRoles().subscribe((users) => {
       this.users = users;
     });
   }
@@ -36,7 +36,6 @@ export class UserManagementComponent implements OnInit {
         roles: this.getRolesArray(user),
       },
     };
-
     this.bsModalRef = this.modalService.show(RolesModalComponent, config);
     this.bsModalRef.content.updateSelectedRoles.subscribe((values) => {
       const rolesToUpdate = {
@@ -73,13 +72,11 @@ export class UserManagementComponent implements OnInit {
           break;
         }
       }
-
       if (!isMatch) {
         role.checked = false;
         roles.push(role);
       }
     });
-
     return roles;
   }
 }
